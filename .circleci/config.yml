@@ -1,0 +1,30 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install vsce
+      - run: node_modules/.bin/vsce publish minor -p ${VSCE_TOKEN}
+      - run: git add package.json
+      - run: git config user.email ${GIT_EMAIL}
+      - run: git config user.name ${GIT_NAME}
+      - run: git config push.default simple
+      - run: "git commit -m ':rocket: Update version after deployment [ci skip]'"
+      - run: git push --set-upstream origin ${CIRCLE_BRANCH}
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
+

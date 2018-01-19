@@ -1,0 +1,33 @@
+{
+    "name": "moon",
+    "displayName": "Moon",
+    "icon": "ressources/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/g3offrey/moon-ui"
+    },
+    "description": "Vivid theme for VSCode",
+    "version": "0.0.1",
+    "publisher": "legfrey",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "keywords": [
+        "color-theme",
+        "theme",
+        "vivid",
+        "dark"
+    ],
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Moon",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Moon-color-theme.json"
+            }
+        ]
+    }
+}
