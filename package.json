@@ -7,7 +7,7 @@
         "url": "https://github.com/g3offrey/moon-ui"
     },
     "description": "Vivid theme for VSCode",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "legfrey",
     "engines": {
         "vscode": "^1.19.0"
